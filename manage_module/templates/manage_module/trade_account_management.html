@@ -1,0 +1,97 @@
+{% extends 'shared/_home_and_manage_layout.html' %}
+{% load static %}
+
+{% block title %}manage trade accounts{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+<div class="manage-page">
+    <div class="data-table-container">
+    <table>
+						<thead>
+							<tr class="main-table-header">
+								<th>SN</th>
+								<th>Title</th>
+								<th>Balance</th>
+								<th>Profit Target</th>
+								<th>Daily Loss Limit</th>
+								<th>Overal Loss Limit</th>
+								<th>Min Trading Days</th>
+								<th>Time</th>
+                                <th>Is Active</th>
+								<th>Edit Account</th>
+                                <th>Delete Account</th>
+							</tr>
+						</thead>
+						<tbody class="table-list">
+                {#<!-- insert table detail here -->#}
+{% for trade_account in trade_accounts %}
+
+		    <tr class="statement-row">
+		    <td class="sn-column">{{ page_obj.start_index|add:forloop.counter0 }}</td>
+		    <td class="title-column">{{ trade_account.title }}</td>
+		    <td class="balance-column">{{ trade_account.more_info.balance }}</td>
+            <td class="profit-target-column">{{ trade_account.more_info.profit_target }}</td>
+		    <td class="daily-loss-limit-column">{{ trade_account.more_info.daily_loss_limit }}</td>
+	    	<td class="overall-loss-limit-column">{{ trade_account.more_info.overal_loss_limit }}</td>
+		    <td class="minimum-trading-days-column">{{ trade_account.more_info.minimum_trading_days }}</td>
+            <td class="created-date-column">{{ trade_account.created_date|date:"Y-m-d H:i" }}</td>
+            <td>
+                <input type="checkbox" {% if trade_account.is_active %}checked="checked"{% endif %} >
+                    </td>
+            <td>
+                <button class="edit-note-btn">Edit</button>
+                    </td>
+            <td>
+                <button class="delete-btn">Delete</button>
+            </td>
+	</tr>
+                        {% endfor %}
+
+
+
+                        </tbody>
+					</table>
+
+
+</div>
+
+</div>
+    <div class="pagination-container">{% include 'shared/components/_paginaton.html' %}</div>
+			</div>
+
+
+<div id="popupEditTradeAccountForm" class="form-popup">
+<form class="form-container" method="post" id="editTradeAccountForm">
+    <h2>Update Trade Account</h2>
+      <div id="edit_input_place"></div>
+    <div class="button-container">
+      <button type="button" class="btn info" id="editBtnSubmit">Submit</button>
+      <button type="button" class="btn danger" id="editBtnCancel">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+        <div id="deleteAccountPopUpForm" class="form-popup">
+<form class="form-container" id="deleteAccountForm">
+    <h2>Delete</h2>
+    <p>Are you sure to delete <span id="AccountNameToDelete"></span></p>
+    <div class="button-container">
+        <button type="button" class="btn danger" id="deleteBtnSubmit">Yes</button>
+      <button type="button" class="btn info" id="deleteBtnCancel">No</button>
+    </div>
+  </form>
+        </div>
+
+{% endblock %}
+
+
+
+
+
+
+{% block this_page_footer_refrences %}
+    <script src="{% static 'manage_module/js/ajax/manageScript.js' %}"></script>
+{% endblock %}

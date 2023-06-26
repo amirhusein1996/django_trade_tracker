@@ -1,0 +1,18 @@
+{% extends 'account_module/auth_layout.html' %}
+{% load static %}
+{% block title %}sing in{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+			<h2>Login</h2>
+			<form action="{% url 'account_module:sign_in' %}" method="post">
+                {% csrf_token %}
+				{{ form }}
+				<input type="submit" value="Login">
+			</form>
+        <a class="forgot-password" onclick="forgotPassword('{% url 'account_module:forgot_password' %}')">Forgot Password?</a>
+			<a class="btn-create" href="{% url 'account_module:sign_up' %}">Create Account</a>
+		</div>
+<script src="{% static 'account_module/js/login.js' %}"></script>
+{% endblock %}

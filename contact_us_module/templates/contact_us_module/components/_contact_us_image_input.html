@@ -1,0 +1,6 @@
+<div class="image-input-container">
+    <label for="{{ widget.attrs.id }}" class="image-input-label">
+    <i class="fa fa-paperclip" aria-hidden="true"></i><span>Attach a photo</span></label>
+<input type="{{ widget.type }}" name="{{ widget.name }}" class="image-input"
+        {% include "django/forms/widgets/attrs.html" %}>
+</div>

@@ -1,0 +1,25 @@
+{#paginator#}
+
+{% if is_paginated %}
+
+<div class="pagination">
+   {% if page_obj.has_previous %}
+       <a onclick="changePageNumber('{{ page_obj.previous_page_number }}')">prev</a>
+       {% else %}
+       <a class="placeholder">prev</a>
+   {% endif %}
+
+    {% for page_num in paginator.page_range %}
+        <a onclick="changePageNumber('{{ page_num }}')"
+        {% if page_num == page_obj.number %}class="active" {% endif %}>{{ page_num }}</a>
+{#        <a  {{ page_obj.previous_page_number }}{% if page_num == page_obj.number %}class="active" {% endif %}>{{ page_num }}</a>#}
+    {% endfor %}
+
+{# <--next page here-->#}
+     {% if page_obj.has_next %}
+         <a onclick="changePageNumber('{{ page_obj.next_page_number }}')">next</a>
+         {% else %}
+         <a class="placeholder">next</a>
+     {% endif %}
+</div>
+{% endif %}

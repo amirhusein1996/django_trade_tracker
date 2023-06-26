@@ -1,0 +1,27 @@
+
+{% load poll_extres %}
+{#{% if trades.count > 0 %}#}
+
+
+        {% for trade in trades %}
+
+        <tr class="statement-row">
+		<td>{{  page_obj.start_index|add:forloop.counter0 }}</td>
+		<td>{{ trade.currency_type }}</td>
+		<td>{{ trade.time|date:"Y-m-d H:i" }}</td>
+        <td>{{ trade.lot|comma_seprator }}</td>
+		<td>{{ trade.sl|comma_seprator }}</td>
+		<td>{{ trade.tp|comma_seprator }}</td>
+		<td>{{ trade.r_r|comma_seprator }}</td>
+		<td>{{ trade.profit|dollar_sign }}</td>
+		<td class="note">
+			<button class="edit-note-btn" onclick="editTradeRecord(this,'{{ trade.id }}')">
+            {% if trade.image or trade.description %}Edit{% else %}Add{% endif %}
+            </button>
+		</td>
+	</tr>
+           <p>{{ trade.description }}</p>
+        {% endfor %}
+{#{% endif %}#}
+
+

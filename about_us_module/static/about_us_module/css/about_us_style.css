@@ -1,0 +1,293 @@
+* {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+      filter: grayscale(1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      width: 100vw;
+      position: relative;
+}
+
+html {
+      font-size: 16px;
+}
+
+::-moz-selection {
+      /* Code for Firefox */
+      color: #fff;
+      background: #000;
+}
+
+::selection {
+      color: #fff;
+      background: #000;
+}
+
+.container {
+      margin: 1rem auto 2rem auto;
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 5px solid;
+      border-radius: 10px;
+      padding: 1.5rem;
+      position: relative;
+}
+
+.container .link {
+      position: absolute;
+      top: 10.3rem;
+      width: 10rem;
+      height: 10rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 5px solid;
+      border-radius: 50%;
+      padding: 1rem;
+      transform: scale(0);
+      transition: 0.5s;
+      opacity: 0;
+      backdrop-filter: blur(10px);
+
+
+}
+
+.visible {
+      transform: scale(1) !important;
+      opacity: 1 !important;
+}
+
+.container .link p {
+      margin-bottom: 1.5rem;
+
+}
+
+.container .link a {
+      border: 2px solid #000;
+      color: #000;
+      border-radius: 10px;
+      width: 100%;
+      padding: 0.5rem;
+      transition: background 0.3s, color 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+}
+
+.container .link a:hover {
+      background: #000;
+      color: #fff;
+}
+
+.container h2 {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      text-transform: capitalize;
+}
+
+.container h1 {
+      margin-bottom: 1rem;
+}
+
+.profile-image {
+      width: 15rem;
+      height: 15rem;
+      object-fit: cover;
+      border-radius: 50%; 
+      border: 5px solid; 
+      margin-bottom: .5rem;
+      /*filter: grayscale(1);*/
+}
+
+.open-github {
+      margin-bottom: 1.5rem;
+      border: none;
+      outline: none;
+      cursor: pointer;
+}
+
+.open-github i {
+      font-size: 1.5rem;
+      transition: 0.3s;
+}
+
+.open-github:hover i {
+      color: gray;
+}
+
+.bio {
+      font-size: 0.8rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+}
+
+.skills {
+      width: 100%;
+      min-height: 10rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+}
+
+.skills .skill {
+      width: 100%;
+      height: 100%;
+      width: 10rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 5px solid;
+      cursor: pointer;
+}
+
+.skills .skill i , .skills .skill img{
+      margin-bottom: 1.2rem;
+      transition: transform 0.3s;
+}
+.skills .skill i{
+      font-size: 5rem;
+}
+.skills .skill img {
+      width: 5rem;
+      height: 5rem;
+      object-fit: cover;
+}
+
+.skills .skill:hover i , .skills .skill:hover img {
+      transform: scale(1.2);
+
+}
+
+.skills .skill p {
+      padding: 0.2rem;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+
+}
+
+.skills .skill:hover p {
+      background-color: #000;
+      color: #fff;
+
+}
+
+
+/* footer section */
+
+.footer{
+      position: absolute;
+      bottom: 0;
+      width: 100vw;
+      height: 1.5rem;
+      background: #000;
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+.footer .developer-name{
+      color: #fff;
+      text-transform: capitalize;
+}
+.footer a{
+      color: gray;
+      text-decoration: none;
+      transition: color .3s;
+}
+.footer a:hover{
+      color: #fff;
+}
+
+/* responsive */
+
+
+@media only screen and (max-width: 865px) {
+      .skills {
+            flex-wrap: wrap;
+      }
+}
+
+
+@media only screen and (max-width: 650px) {
+
+      .container {
+
+            width: 95%;
+
+      }
+
+      .skills .skill {
+            width: 100%;
+            height: 100%;
+            width: 9rem;
+            padding: 1rem;
+      }
+
+      .skills .skill i {
+            font-size: 5rem;
+            margin-bottom: 1.2rem;
+
+      }
+
+      .skills .skill p {
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+
+      }
+}
+
+
+
+
+@media only screen and (max-width: 380px) {
+
+      .skills .skill {
+
+            width: 8rem;
+
+      }
+
+      .skills .skill i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            transition: transform 0.3s;
+
+      }
+
+      .skills .skill p {
+            font-size: 0.9rem;
+      }
+}
+
+
+@media only screen and (max-width: 345px) {
+
+      .skills .skill {
+
+            width: 100%;
+            padding: 5px;
+
+      }
+
+      .skills .skill i {
+            font-size: 5rem;
+      }
+
+      .skills .skill p {
+            font-size: 1.2rem;
+      }
+}

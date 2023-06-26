@@ -1,0 +1,22 @@
+{% load thumbnail %}
+{% load static %}
+{% if widget.is_initial %}
+  <div class="form-image-preview">
+      {% thumbnail widget.value "200" crop="center" as im %}
+    <img src="{{ im.url }}" class="img-preview">
+{% endthumbnail %}
+    <div class="checkbox-flex">
+      <input class="check-box" type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}" {% if widget.attrs.disabled %}disabled{% endif %}>
+      <label for="{{ widget.checkbox_id }}">Remove Image</label><p>|</p>
+        <a href="{{ widget.value.url }}" target="_blank">Show saved image</a>
+    </div>
+  </div>
+    {% else %}
+    <div class="form-image-preview">
+    <img src="{% static 'assets/image/no_image.jpg' %}" class="img-preview">
+    </div>
+{% endif %}
+<label for="id_image" class="image-input-label">
+    Upload Image
+</label>
+<input type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %} class="image-input">

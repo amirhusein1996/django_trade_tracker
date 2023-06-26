@@ -1,0 +1,28 @@
+.container p{
+    font-family: Arial, sans-serif;
+    text-align: justify;
+}
+.forgot-password{
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #4a74c9;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: auto;
+    margin-top: 5px;
+}
+
+.errorlist {
+  color: red;
+  font-weight: bold;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.errorlist li {
+  margin-bottom: 10px;
+}

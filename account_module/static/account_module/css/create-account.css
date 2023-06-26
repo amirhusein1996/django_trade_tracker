@@ -1,0 +1,83 @@
+body {
+      background-color: #e9f1fe;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+}
+
+.container {
+      background-color: #e9f1fe;
+      box-shadow: 7px 7px 15px #c4c9d2,
+            -7px -7px 15px #f6f9ff;
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px;
+      width: 400px;
+}
+
+.container form {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+}
+
+h2 {
+      font-family: Arial, sans-serif;
+      font-size: 28px;
+      margin-bottom: 30px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+      padding: 10px 0 10px 0;
+      border-radius: 20px;
+      border: none;
+      background-color: #f6f9ff;
+      margin-bottom: 20px;
+      box-shadow: inset 5px 5px 10px #c4c9d2,
+            inset -5px -5px 10px #f6f9ff;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      color: #555;
+      width: 100%;
+      text-align: center;
+}
+
+input[type="submit"],
+.btn-login {
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      background-color: #4a74c9;
+      color: #fff;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+}
+
+input[type="submit"]:hover,
+.btn-login:hover {
+      background-color: #2d4d8b;
+}
+
+.btn-login {
+      background-color: #d8e0f0;
+      color: #4a74c9;
+      box-shadow: 5px 5px 10px #c4c9d2,
+            -5px -5px 10px #f6f9ff;
+      margin-top: 10px;
+      width: auto;
+      padding: 5px 10px;
+      text-decoration: none;
+}
+
+.btn-login:hover {
+      background-color: #c4c9d2;
+}

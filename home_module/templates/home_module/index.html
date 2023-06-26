@@ -1,0 +1,81 @@
+{% extends 'shared/_home_and_manage_layout.html' %}
+{% load static %}
+
+{% block title %}Trading View{% endblock %}
+
+
+{% block content %}
+
+    <form class="transfer-data">
+    <input type="hidden" id="account_name" name="account_name">
+    <input type="hidden" id="time_selected" name="time_selected" value="all">
+    <input type="hidden" id="page" name="page">
+    </form>
+
+
+    <h1>
+
+
+    </h1>
+		<div class="container">
+
+				<h1>Trading Overview</h1>
+            {#  overview here#}
+            {% include 'home_module/components/_overview.html' %}
+            {#	trading history here #}
+            {% include 'home_module/components/_trading_history.html' %}
+        </div>
+    
+		<!-- pop up section started -->
+		<div class="popup-box">
+			<div class="popup">
+				<div class="content">
+					<header>
+						<p>Update Task</p>
+						<i class="uil uil-times">×</i>
+					</header>
+					<form>
+
+                        <div class="row">{# here inputs will be placed #}</div>
+
+
+						<div class="button-container">
+                            <button type="button" class="btn info" id="upadate_note">Update Task</button>
+                        <button class="btn danger" id="delete_record">Delete Task</button>
+                        </div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!--! pop up section ended -->
+
+<div id="deactiveTradeAccountPopUpForm" class="form-popup">
+<form class="form-container">
+    <h2>Are You Sure?</h2>
+    <p>This account will be deactive and you can active it again in <a target="_blank" href="{% url "manage_module:manage_page" %}">manage accounts</a></p>
+    <div class="button-container">
+        <button type="button" class="btn danger" id="deactiveBtn">Yes</button>
+      <button type="button" class="btn info" id="deactiveCancelBtn">No</button>
+    </div>
+  </form>
+</div>
+
+
+    <div id="delete_trade_ask_form" class="form-popup">
+<form class="form-container">
+    <h2>Are You Sure?</h2>
+    <div class="button-container">
+        <button type="button" class="btn danger" id="delete_trade_submit">Yes</button>
+      <button type="button" class="btn info" id="delete_trade_cancel">No</button>
+    </div>
+  </form>
+</div>
+
+
+{% endblock %}
+
+
+{% block this_page_footer_refrences%}
+    <script src="{% static 'home_module/assets/js/ajax/indexScript.js' %}"></script>
+{% endblock %}
+

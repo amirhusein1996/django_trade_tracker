@@ -1,0 +1,149 @@
+body{
+    background-color: #e9f1fe;
+    background: linear-gradient(110deg, #f3f8ff 0%, #cadeff 100%);
+}
+.container{
+    position: relative;
+}
+.error-container{
+    position: absolute;
+    /*left: 50%;*/
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: #1b1b1b;
+    border: 1px solid red;
+    border-radius: 10px;
+    padding: 10px 20px 10px 5px
+}
+.form-row{
+    position: relative;
+    margin: 2em 0;
+}
+
+.error{
+    border-bottom: 2px solid #ff0000;
+}
+.form-row input{
+    text-align: center;
+}
+.gender-input{
+    text-align: center;
+    cursor: pointer;
+    width: 65%;
+    height: 35px;
+    padding: 0px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    /*background-color: #f2f2f2;*/
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    /*-webkit-appearance : none;*/
+    -moz-appearance: none;
+    position:absolute;
+    right: 6px;
+    top: 0;
+
+}
+.gender-input:focus{
+    /*box-shadow: 2px 2px 2px 1px rgba(227, 123, 39, 0.6);*/
+    border-bottom: 2px solid #e37b27;
+    border-right: 1px solid #e37b27;
+}
+.gender-input option{
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+}
+.birthdate-input {
+    cursor: pointer;
+    width: 60%!important;
+    padding: 10px!important;
+    position: absolute;
+    right: 0;
+    top: 6px;
+}
+.form-row label[for="first_name"] , .form-row label[for="last_name"],
+.form-row label[for="id_avatar"]{
+    display: none;
+}
+.form-row label[for="gender"] , .form-row label[for="birthdate"]{
+    color: rgba(0, 0, 0, 0.58);
+    font-weight: bolder;
+}
+
+.image-input-container{
+    position: relative;
+}
+.image-preview{
+	width: 484px;
+	height: 584px;
+	object-fit: cover;
+}
+
+.image-input{
+	display: none;
+}
+.image-input-label{
+    position: absolute;
+    left: calc(50% - 113px);
+    justify-content: center;
+	width: 50%;
+    max-width: 50%;
+	text-align: center;
+	color: #666;
+	border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.image-input-label:hover{
+background-color: #666;
+color: white;
+}
+
+
+
+.image-container{
+    position: relative;
+}
+
+
+.icon-container .top-right{
+    font-size: 2.5em;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.icon-container .top-right i {
+    display: none;
+    cursor: pointer;
+    color: #fe892a;
+    margin: 2rem;
+    z-index: -1;
+
+}
+.icon-container .top-right i:hover {
+    color: #e37b27;
+}
+
+
+
+.icon-container .center i{
+    opacity: 0;
+    color: rgb(224, 224, 224);
+    font-size: 15em;
+    position: absolute;
+    top : calc(50% - 120px);
+    right: calc(50% - 105px);
+}
+
+
+input[type='checkbox'] {   
+    display: none;
+}

@@ -1,0 +1,7 @@
+{% if widget.is_initial %}
+<input type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}"{% if widget.attrs.disabled %} disabled{% endif %}>
+{% endif %}
+<div class="image-input-container">
+<label for="image_input" class="image-input-label">Upload a photo</label>
+<input type="{{ widget.type }}" name="{{ widget.name }}" id="image_input" class="image-input" {% include "django/forms/widgets/attrs.html" %}>
+    </div>

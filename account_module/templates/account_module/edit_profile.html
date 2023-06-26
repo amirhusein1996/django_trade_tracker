@@ -1,0 +1,94 @@
+{% extends 'shared/_all_other_page_layout.html' %}
+{% load static %}
+{% load thumbnail %}
+
+
+{% block title %}edit profile{% endblock %}
+
+
+{% block content %}
+<div class="container">
+
+<div class="form-v6">
+	<div class="page-content">
+		<div class="form-v6-content">
+			<div class="form-left">
+
+
+
+				<div class="image-container" >
+{% if user.avatar %}
+    {% thumbnail user.avatar "484x584" crop='center' as im %}
+        <img src="{{ im.url }}" class="image-preview">
+    {% endthumbnail %}
+    {% elif user.gender %}
+        {% if user.gender == 'M' %}
+
+            <img src="{% static 'assets/image/edit_profile_male.jpg' %}" class="image-preview">
+        {% else %}
+            <img src="{% static 'assets/image/edit_profile_female.jpg' %}" class="image-preview">
+        {% endif %}
+    {% else %}
+        <img src="{% static 'assets/image/edit_profile_no_photo.jpg' %}"class="image-preview">
+{% endif %}
+{#					<img src="{% static 'assets/image/edit_profile_no_photo.jpg' %}" alt="form" class="image-preview">#}
+
+				<div class="icon-container">
+					<div class="top-right">
+						<i class="fa-solid fa-trash"></i>
+					</div>
+
+					<div class="center">
+						<i class="fa-solid fa-trash"></i>
+					</div>
+
+							</div>
+				</div>
+
+
+
+
+
+			</div>
+			<form class="form-detail" action="{% url 'account_module:edit_profile' %}" method="post" enctype="multipart/form-data">
+				<h2>Edit Profile</h2>
+                {% csrf_token %}
+
+                {% for field  in form %}
+                <div class="form-row {% if field.errors %}error{% endif %}">
+                {{ field.label_tag }}
+                    {{ field }}
+
+                </div>
+
+                {% endfor %}
+
+				<div class="form-row-last">
+					<input type="submit" class="submit-button" value="Save">
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+{#</div>#}
+{#  <div class="error-container"><p>{{ form.errors }}</p></div>#}
+{#    </div>#}
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+{% block this_page_header_refrences %}
+    <link rel="stylesheet" href='{% static 'account_module/css/edit_profile_style.css' %}' >
+	<link rel="stylesheet" href="{% static 'account_module/css/edit_profile_style_custom.css' %}">
+{% endblock %}
+
+{% block this_page_footer_refrences %}
+    <script src="{% static 'account_module/js/editProfileScript.js' %}"></script>
+{% endblock %}

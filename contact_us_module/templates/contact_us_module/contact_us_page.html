@@ -1,0 +1,75 @@
+{% extends 'shared/_all_other_page_layout.html' %}
+{% load static %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+<div class="contact1">
+		<div class="container-contact1">
+			<div class="contact1-pic js-tilt" data-tilt>
+				<img src="{% static 'contact_us_module/images/img-01.png' %}" alt="IMG">
+			</div>
+
+			<form method="post" action="{% url 'contact_us_module:contact_us_page' %}" enctype="multipart/form-data" class="contact1-form validate-form">
+				{% csrf_token %}
+                <span class="contact1-form-title">
+					Get in touch
+				</span>
+
+                {% for field in form %}
+                <div class="wrap-input1 validate-input"{# <data-validate = "Name is required" #}>
+                    {{ field }}
+					<span class="shadow-input1"></span>
+				</div>
+                {% endfor %}
+
+				<div class="container-contact1-form-btn">
+					<button class="contact1-form-btn">
+						<span>
+							Send Email
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}
+
+
+
+
+{% block this_page_header_refrences %}
+    <!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="{% static 'contact_us_module/vendor/bootstrap/css/bootstrap.min.css' %}">#}
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'contact_us_module/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'contact_us_module/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'contact_us_module/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'contact_us_module/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'contact_us_module/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'contact_us_module/css/main.css' %}">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'contact_us_module/css/custom.css' %}">
+{% endblock %}
+
+{% block this_page_footer_refrences %}
+<!--===============================================================================================-->
+	<script src="{% static 'contact_us_module/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'contact_us_module/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'contact_us_module/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'contact_us_module/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'contact_us_module/vendor/tilt/tilt.jquery.min.js' %}"></script>
+<!--===============================================================================================-->
+    <script src="{% static 'contact_us_module/js/main.js' %}"></script>
+    <script src="{% static 'contact_us_module/js/contactUsPageScript.js' %}"></script>
+{% endblock %}
+

@@ -1,0 +1,21 @@
+# created by virtualenv automatically
+/share/
+/etc/
+/Lib/
+/Scripts/
+/uploaded_media/
+/site_module/
+/request_limitation/
+/.idea/
+/__pycache__/
+/db.sqlite3
+/pyvenv.cfg
+
+
+/about_us_module/migrations/
+/account_module/migrations/
+/base_module/migrations/
+/contact_us_module/migrations/
+/home_module/migrations/
+/manage_module/migrations/
+/polls/migrations/

@@ -1,0 +1,50 @@
+{% load static %}
+
+
+
+
+			<div class="nav-bar">
+
+				<div class="left">
+
+{#                trade buttons here#}
+					{% if  request.resolver_match.view_name == 'home:index' %}
+                        {% for account in accounts %}
+    <button class="real" value="{{ account.slug }}" ><span>{{ account.title }}</span><i class="fa-solid fa-trash"></i></button>
+    {% endfor %}
+    {% endif %}
+
+{#                add trade button here#}
+                {% if request.resolver_match.view_name in 'manage_module:manage_page__home:index' %}
+			<button class="add-page" id="add-account">{% include 'shared/components/svg/_plus_circle_svg.html' %}</button>
+{% endif %}
+
+{#                manage trade buttons here#}
+{% if total_account_count or  request.resolver_match.view_name == 'manage_module:manage_page' %}
+    <a href="{% url 'manage_module:manage_page' %}">
+            <button id="manage" class="circle-btn {% if  request.resolver_match.view_name == 'manage_module:manage_page' %}active{% endif %}">
+                {% if  request.resolver_match.view_name == 'manage_module:manage_page' %}
+                {% include 'shared/components/svg/_gear_fill_svg.html' %}
+                {% else %}
+                {% include 'shared/components/svg/_gear_svg.html' %}
+            {% endif %}</button>
+</a>
+                {% endif %}
+
+{#                home button here#}
+ <a href="{% url 'home:index' %}"><button class="circle-btn {% if  request.resolver_match.view_name == 'home:index' %}active{% endif %}">
+ {% if  request.resolver_match.view_name == 'home:index' %}
+     {% include 'shared/components/svg/_home_check_svg.html' %}
+ {% else %}
+     {% include 'shared/components/svg/_home_svg.html' %}
+ {% endif %}
+     </button></a>
+
+				</div>
+
+				<div class="right">
+                    {{ user_profile }}
+
+			</div>
+
+            </div>

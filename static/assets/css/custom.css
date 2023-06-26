@@ -1,0 +1,231 @@
+
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+
+
+
+
+.condition {
+
+      width: fit-content;
+      border-radius: 5px;
+      padding: 2px 5px;
+}
+
+.successful{
+    color: #27ae60;
+    background-color: #b8e994;
+}
+.ongoing{
+    color: #d35400;
+    background-color: #eab55f;
+}
+.failed{
+    color: #c0392b;
+    background-color: #f3a39a;
+}
+
+.messages {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+    padding: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.messages::before{
+    content: "\f05a";
+    margin-right: 10px;
+}
+
+
+.data-table-container .history-title .title-left {
+    justify-content: flex;
+}
+.data-table-container .history-title .title-right {
+    justify-content: flex-end;
+}
+.data-table-container .table-container th p {
+    cursor: context-menu;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    quser-select: none; /* Standard syntax */
+}
+.container select{
+    text-align: center;
+}
+.pagination{
+    text-align: center;
+    margin-top: 20px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    quser-select: none; /* Standard syntax */
+}
+
+.pagination a{
+  width: 3em;
+    height: 3em;
+    display: inline-flex;
+    padding: 5px;
+    margin: 0 0.1em;
+    background-color: #dbe3fa5e;
+    color: #333;
+    text-decoration: none;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination a:hover:not(.placeholder){
+    background-color: #2980b9;
+    color: #ececec;
+    cursor: pointer;
+}
+
+a.placeholder{
+
+    opacity: 0.5;
+    color: white;
+    background-color: #b4b4b4;
+}
+a.placeholder:hover{
+    cursor: context-menu;
+    color: white;
+}
+
+
+#timeInterval{
+
+    margin-right: 2rem;
+    box-shadow:2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+     float: left;
+    cursor: pointer;
+
+}
+
+.downloadBtn{
+    display: inline-block;
+    float: left;
+}
+.data-table-container .history-title p{
+
+
+    display: inline-block;
+    white-space: nowrap;
+}
+
+
+
+
+
+.manage-page .data-table-container .edit-note-btn {
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      /*padding:20px 10px;*/
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      background-color: #4834d4;
+      color: #ececec;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    height: 2.5rem;
+    width: 5.5rem;
+
+
+}
+
+.manage-page .data-table-container .edit-note-btn:hover {
+      background-color: #2980b9;
+}
+
+
+.delete-btn{
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+  color: #ffffff;
+  box-shadow: 2px 1px 1px #ffffff;
+}
+
+
+
+/*is active*/
+input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+input[type="checkbox"]:hover {
+  background-color: #f2f2f2;
+}
+
+
+
+ /*additional popup-box style*/
+form .img-preview {
+      display: block;
+      max-width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+      border-radius: 20px;
+      box-shadow: 2px 1px 1px #ffffff;
+    pointer-events: none;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+
+}
+/*form .img-preview.show{*/
+/*      display: block;*/
+/*}*/
+
+.checkbox-flex{
+    display: flex;
+}
+.checkbox-flex label,p{
+    margin: 0px 10px;
+}
+
+
+a {
+ color: #0000FF;
+ text-decoration: none;
+    font-weight: bold;
+}
+a:hover{
+    color: #ff0000;
+}
+
+input[disabled] {
+ background-color: #ffdbdb!important;
+ cursor: context-menu;
+}

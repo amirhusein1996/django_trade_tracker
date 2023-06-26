@@ -1,0 +1,95 @@
+{% extends 'shared/_all_other_page_layout.html' %}
+{% load static %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+<div class="contact1">
+		<div class="container-contact1">
+			<div class="contact1-pic js-tilt" data-tilt>
+				<img src="{% static 'contact_us_module/images/img-01.png' %}" alt="IMG">
+			</div>
+
+			<div class="contact1-form validate-form">
+				<span class="contact1-form-title">
+					Massage Received
+				</span>
+
+                <div class="wrap-input1 validate-input"{# <data-validate = "Name is required" #}>
+<p class="input1 extra">
+    Thanks for letting us know your thoughts.
+    Our team will look into this and get back to you as needed
+</p>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="container-contact1-form-btn">
+					<button class="contact1-form-btn">
+						<span>
+							Home Page
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
+
+
+
+
+{% block this_page_header_refrences %}
+    <!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'contact_us_module/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'contact_us_module/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'contact_us_module/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'contact_us_module/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'contact_us_module/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'contact_us_module/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'contact_us_module/css/main.css' %}">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'contact_us_module/css/custom.css' %}">
+
+    <style>
+    .extra{
+        padding: 13px;
+        border-radius: 7px;
+    }
+    </style>
+{% endblock %}
+
+{% block this_page_footer_refrences %}
+<!--===============================================================================================-->
+	<script src="{% static 'contact_us_module/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'contact_us_module/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'contact_us_module/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'contact_us_module/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'contact_us_module/vendor/tilt/tilt.jquery.min.js' %}"></script>
+<!--===============================================================================================-->
+    <script src="{% static 'contact_us_module/js/main.js' %}"></script>
+
+       <script>
+    const homePageRouter =function (){
+        window.location.href = "{% url 'home:index' %}"
+    }
+    const homePageBtn = document.querySelector('.container-contact1-form-btn .contact1-form-btn')
+
+    setTimeout(homePageRouter, 10000)
+    homePageBtn.addEventListener('click', ()=>{
+        homePageRouter()
+    })
+    </script>
+{% endblock %}
+

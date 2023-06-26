@@ -1,0 +1,112 @@
+{% extends 'shared/_all_other_page_layout.html' %}
+{% load static %}
+
+{% block title %}About Us{% endblock %}
+
+
+
+{#''' Due to the lack of a database in the repository, I used static files ''' #}
+
+{% block content %}
+    		<div class="container">
+			<h2>a bit about me</h2>
+			<h1>Who Am i ?</h1>
+			<img
+				class="profile-image"
+				src="{% static 'assets/image/mypic.jpg' %}"
+				alt="profile-image" />
+			<button class="open-github"><i class="fab fa-github"></i></button>
+			<div class="link">
+				<p>Link to Github</p>
+				<a href="https://github.com/amirhusein1996" target="_blank">github</a>
+			</div>
+			<p class="bio">
+				As a backend developer, I have a strong foundation in
+				programming languages such as Python and JavaScript. I am
+				well-versed in web development frameworks such as Django and
+				DRF, which allow me to create robust and scalable web
+				applications. My expertise in jQuery and AJAX enables me to
+				create dynamic user interfaces that are responsive and
+				intuitive.
+			</p>
+
+			<div class="skills">
+				<div class="skill">
+					<i class="fab fa-python"></i>
+					<p>Python</p>
+				</div>
+				<div class="skill">
+					<i class="fab fa-js-square"></i>
+					<p>JavaScript</p>
+				</div>
+
+				<div class="skill">
+                    <img src="{% static 'assets/image/drf.jpg' %}">
+					<p>DRF</p>
+				</div>
+				<div class="skill">
+					<img src="{% static 'assets/image/django.jpg' %}">
+					<p>Django</p>
+				</div>
+			</div>
+		</div>
+
+
+
+    <div class="footer">
+			<p class="developer-name">Index page designed by <a href="https://github.com/hossein-abz76" target="_blank">hossein_abz76</a></p>
+		</div>
+{% endblock %}
+
+
+
+{#{% block content %}#}
+{#        <div class="container">#}
+{#			<h2>a bit about me</h2>#}
+{#			<h1>{{ object.title }}</h1>#}
+{#			<img#}
+{#				class="profile-image"#}
+{#				src="{{ object.image.url }}"#}
+{#				alt="profile-image" />#}
+{#			<button class="open-github"><i class="fab fa-github"></i></button>#}
+{#			<div class="link">#}
+{#				<p>Link to Github</p>#}
+{#				<a href="{{ object.github_link }}" target="_blank">github</a>#}
+{#			</div>#}
+{#			<p class="bio">#}
+{#				{{ object.description }}#}
+{#			</p>#}
+{##}
+{#			<div class="skills">#}
+{#                {% for skill in object.skills_set.all %}#}
+{#				<div class="skill">#}
+{#                {% if skill.image %}#}
+{#                    <img src="{{ skill.image.url }}">#}
+{#                    {% else %}#}
+{#					<i class="{{ skill.fa_icon }}"></i>#}
+{#                    {% endif %}#}
+{#					<p>{{ skill.title }}</p>#}
+{#				</div>#}
+{#                {% endfor %}#}
+{##}
+{##}
+{#			</div>#}
+{#		</div>#}
+{#		<div class="footer">#}
+{#			<p class="developer-name">Index page designed by <a href="https://github.com/hossein-abz76" target="_blank">hossein_abz76</a></p>#}
+{##}
+{##}
+{##}
+{#		</div>#}
+{#{% endblock %}#}
+{##}
+
+
+
+{% block this_page_header_refrences %}
+    <link rel="stylesheet" href="{% static 'about_us_module/css/about_us_style.css' %}" />
+{% endblock %}
+
+{% block this_page_footer_refrences %}
+    <script src="{% static 'about_us_module/js/aboutUsScript.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'account_module/auth_layout.html' %}
+
+{% block title %}Check Email{% endblock %}
+
+{% block content %}
+
+        <div class="container">
+			<h2>Check Your Email</h2>
+        <p>Thank you for registering on our site.
+            An email has been sent to you.
+            Please click on the submit link to activate your account</p>
+        <a class="btn-login" href="{% url 'account_module:sign_in' %}">Go To Login Page</a>
+		</div>
+
+
+{% endblock %}

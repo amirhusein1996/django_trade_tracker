@@ -1,0 +1,44 @@
+<div class="drop-down-profile">
+    {% if user.avatar %}
+    <img src="{{ user.avatar.url }}" class="user-pic" onclick="toggleMenu()">{% else %}
+
+
+
+						<img src="{% static 'assets/image/no_profile_photo.jpg' %}" class="user-pic" onclick="toggleMenu()">
+
+						<div class="sub-menu-wrap" id="subMenu">
+							<div class="sub-menu">
+								<div class="user-info">
+									<img src="{% static 'assets/image/no_profile_photo.jpg' %}">
+									<h3>Hushang Shahi</h3>
+								</div>
+								<hr>
+
+								<a href="{% url 'account_module:edit_profile' %}" class="sub-menu-link">
+									<img src="{% static 'assets/image/edit_profile.png' %}">
+									<p>Edit Profile</p>
+									<span> &gt; </span>
+								</a>
+
+								<a href="{% url 'contact_us_module:contact_us_page' %}" class="sub-menu-link">
+                                    <i class="fa-solid fa-messages"></i>
+									<p>Contact Us</p>
+									<span> &gt; </span>
+								</a>
+
+								<a href="#" class="sub-menu-link">
+									<img src="{% static 'assets/image/help.png' %}">
+									<p>Help &amp; Support</p>
+									<span> &gt; </span>
+								</a>
+
+								<a id="logOutBtn" class="sub-menu-link">
+									<img src="{% static 'assets/image/logout.png' %}">
+									<p>Log Out</p>
+									<span> &gt; </span>
+								</a>
+
+							</div>
+						</div>
+
+					</div>

@@ -1,0 +1,70 @@
+{% load static %}
+{#<div class="trading-history-container">#}
+{#				<div class="history-title">#}
+{#<p>*Note: Time filtering only has an effect on Trade Records , has no effect on Download Chart, and Overview </p>#}
+{#                </div>#}
+{#</div>#}
+<div class="data-table-container">
+				<div class="history-title">
+                <div class="title-left">
+					<p>trading history</p>
+</div>
+<div class="title-right">
+
+                    {% if time_interval %}
+				<select id="timeInterval" >
+                    {% for each_time in time_interval %}
+                    <option value="{{ each_time.value }}" >{{ each_time.to_show }}</option>
+                    {% endfor %}
+				    </select>
+                    {% endif %}
+
+
+					<button class="downloadBtn">download</button>
+</div>
+				</div>
+
+				<div class="table-container">
+					<table>
+						<thead>
+							<tr class="main-table-header">
+								<th>SN</th>
+								<th>Currency Type</th>
+								<th>Time</th>
+                                <th>Lots</th>
+								<th>SL</th>
+								<th>Tp</th>
+								<th>R/R</th>
+								<th>Profit</th>
+								<th>Note</th>
+							</tr>
+		<tr>
+								<th></th>
+								<th><select id="input-currency-type" class="input-currency-type" name="currency-type">
+                                        {% for currency_type in currency_types %}
+                                            <option value="{{ currency_type.currency_name }}">{{ currency_type.currency_name }}</option>
+                                        {% endfor %}
+								    </select></th>
+								<th><input type="datetime-local" placeholder="Time" id="input-time" dir="ltr"></th>
+                                <th><input type="text" placeholder="Lots" id="input-lots"></th>
+								<th><input type="text" placeholder="SL" id="input-sl"></th>
+								<th><input type="text" placeholder="Tp" id="input-tp"></th>
+								<th><input type="text" placeholder="R/R" disabled></th>
+								<th><input type="text" placeholder="Profit" id="input-profit"></th>
+								<th>
+									<button class="add-new-note-btn" id="add_trade_record_btn">
+				+
+			</button>
+								</th>
+							</tr>
+						</thead>
+						<tbody class="table-list"><!-- insert table detail here --></tbody>
+					</table>
+				</div>
+    <p class="messages">You didn't choose an account yet</p>
+
+<form class="link-holder">
+    <input class="no-image" type="hidden" value="{% static 'assets/image/no_image.jpg' %}">
+</form>
+			</div>
+ <div class="pagination"></div>

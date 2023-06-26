@@ -1,0 +1,18 @@
+.image-input-container{
+    position: relative;
+}
+.image-input-container label i{
+    margin-right: 0.5em;
+    font-size: 1.5em;
+}
+.image-input-container label{
+    height: 50px;
+    width: 100%;
+    background-color: #e6e6e6;
+    /*    background:linear-gradient(110deg, #f3f8ff 0%, #cadeff 100%) !important;*/
+
+    border-radius: 25px;
+}
+.image-input-container label:hover{
+    background: linear-gradient(130deg, #57b846, #0e5d00)
+}

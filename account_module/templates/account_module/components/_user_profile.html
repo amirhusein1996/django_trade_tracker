@@ -1,0 +1,72 @@
+{% load static %}
+{% load thumbnail %}
+
+<div class="drop-down-profile">
+
+
+    {% if user.avatar %}
+        {% thumbnail user.avatar "40x40" crop='center' as im %}
+        <img src="{{ im.url }}" class="user-pic" onclick="toggleMenu()">
+    {% endthumbnail %}
+    {% elif user.gender %}
+        {% if user.gender == 'M' %}
+            <img src="{% static 'assets/image/no_profile_photo_male.jpg' %}" class="user-pic" onclick="toggleMenu()">
+        {% else %}
+            <img src="{% static 'assets/image/no_profile_photo_female.jpg' %}" class="user-pic" onclick="toggleMenu()">
+        {% endif %}
+    {% else %}
+        <img src="{% static 'assets/image/no_profile_photo.jpg' %}" class="user-pic" onclick="toggleMenu()">
+{% endif %}
+
+
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+
+ {% if user.avatar %}
+        {% thumbnail user.avatar "150x150" crop='center' as im %}
+        <img src="{{ im.url }}">
+    {% endthumbnail %}
+    {% elif user.gender %}
+        {% if user.gender == 'M' %}
+            <img src="{% static 'assets/image/no_profile_photo_male.jpg' %}" >
+        {% else %}
+            <img src="{% static 'assets/image/no_profile_photo_female.jpg' %}" >
+        {% endif %}
+    {% else %}
+        <img src="{% static 'assets/image/no_profile_photo.jpg' %}">
+{% endif %}
+
+                    <h3>{{ user.get_fullname }}</h3>
+                </div>
+                <hr />
+
+                <a href="{% url 'account_module:edit_profile' %}" class="sub-menu-link">
+                    <img src="{% static 'assets/image/edit_profile.png' %}" />
+                    <p>Edit Profile</p>
+                    <span> > </span>
+                </a>
+
+                <a href="{% url 'contact_us_module:contact_us_page' %}" class="sub-menu-link">
+                                    <img src="{% static 'assets/image/contact_us.png' %}" />
+									<p>Contact Us</p>
+									<span> &gt; </span>
+								</a>
+
+                <a href="{% url 'about_us_module:about_us_page' %}" class="sub-menu-link">
+                    <img src="{% static 'assets/image/about_us.png' %}" />
+                    <p>About Us</p>
+                    <span> > </span>
+                </a>
+
+                <a id="logOutBtn" class="sub-menu-link">
+                    <img src="{% static 'assets/image/logout.png' %}" />
+                    <p>Log Out</p>
+                    <span> > </span>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</div>

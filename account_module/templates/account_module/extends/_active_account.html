@@ -1,0 +1,16 @@
+{% extends 'account_module/auth_layout.html' %}
+{% load static %}
+{% block title %}Activation{% endblock %}
+
+{% block content %}
+
+        <div class="container">
+			<h2>Activate Account</h2>
+        <p>If the link you submitted was valid, Your account is active now.
+        You can login with your email and password. Thank you for your patience<br>This page will redirect to login page after <span class="timer"></span> seconds</p>
+
+        <a class="btn-login" href="{% url 'account_module:sign_in' %}">Go To Login Page</a>
+		</div>
+<script src="{% static 'account_module/js/setTimeout.js' %}"></script>
+
+{% endblock %}

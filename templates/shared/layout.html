@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="csrf-token" content="{{ csrf_token }}" />
+    <style>
+        @font-face {
+      font-family: iranSans;
+      src: url('{% static 'assets/font/IRANSans.ttf' %}');
+}
+
+    </style>
+
+        {% include 'shared/components/_header_references.html' %}
+
+        {% block extra_header_refrences %}{% endblock %}
+
+
+		<title>{% block title %}{% endblock %}</title>
+	</head>
+	<body>
+    <nav>{% include 'shared/components/_nav.html' %}</nav>
+
+
+{% block main_content %}{% endblock %}
+
+
+    <div id="logOutPopUpForm" class="form-popup">
+<form class="form-container" method="get" action="{% url 'account_module:log_out' %}" , id="logOutForm">
+    <h2>Log Out</h2>
+    <p>Are you sure?</p>
+    <div class="button-container">
+        <button type="submit" class="btn danger" id="logOut">Yes</button>
+      <button type="button" class="btn info" id="logOutCancel">No</button>
+    </div>
+  </form>
+</div>
+
+
+
+     <!-- scrollTop section started-->
+		 <div class="circle">
+			<button class="btn" id="go-up"><i class="fas fa-chevron-up"></i></button>
+		    </div>
+		    <!--! scrollTop section ended-->
+
+ {% include 'shared/components/_footer_references.html' %}
+    {% block extra_footer_refrences %}{% endblock %}
+	</body>
+</html>
