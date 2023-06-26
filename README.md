@@ -1,7 +1,8 @@
 # Django Trader Project
 
 This is a Django project designed for traders to manage their trade accounts, enter trade details, and track their activities, losses, profits, and equity. The project provides a user-friendly interface for traders to sign up, log in, and manage their trades effectively. Additionally, the project generates charts based on the entered trades for a selected account, allowing traders to visualize their trading performance.
-Installation
+
+## Installation
 
 To use this project, follow these steps:
 
